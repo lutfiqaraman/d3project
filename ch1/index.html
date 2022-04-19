@@ -7,7 +7,25 @@
 <body>
 
 <div style="width: 100%; max-width: 1200px; margin: 0 auto;">
-    <svg viewBox="0 0 900 300" style="border: 1px solid black"></svg>
+    <svg viewBox="0 0 900 300" style="border: 1px solid black">
+        <line x1="0" y1="300" x2="900" y2="300" stroke="#f00" stroke-width="3"/>
+        <line x1="0" y1="0" x2="0" y2="300" stroke="#f00" stroke-width="3"></line>
+
+        <rect x="260" y="25" width="120" height="60" fill="#81c21c" />
+        <rect x="260" y="100" width="120" height="60" rx="20" ry="20" fill="#81c21c" />
+
+        <ellipse cx="530" cy="205" rx="50" ry="30" />
+
+        <path d="M680 150 C 710 80, 725 80, 755 150 S 810 220, 840 150" fill="none" [CA] stroke="#773b9a" stroke-width="3" />
+
+        <text x="530" y="155" style="text-anchor:middle">circle</text>
+
+        <g>
+            <rect x="0" y="0" width="60" height="60" />
+            <text x="0" y="85">rect</text>
+        </g>
+
+    </svg>
 </div>
 
 </body>
