@@ -7,3 +7,6 @@ svg.append('rect')
     .attr('y', 10)
     .attr('width', 414)
     .attr('height', 16)
+    .attr('fill', '#30D5C8');
+
+
