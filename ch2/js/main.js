@@ -1,3 +1,5 @@
+//JS of D3
+
 const svg = d3.select('.responsive-svg-container')
     .append('svg')
         .attr('viewBox', '0 0 1200 1600')
@@ -11,5 +13,3 @@ svg.append('rect')
     .attr('width', 414)
     .attr('height', 16)
     .attr('fill', '#30D5C8');
-
-
