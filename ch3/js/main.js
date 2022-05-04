@@ -32,5 +32,5 @@ const createBarChart = (data) => {
         .attr("x", 0)
         .attr("y", (d, i) => (barHeight + 5) * i)
         .attr("fill", "skyblue")
-        .attr("fill", d => d.technology === "D3.js" ? "yellowgreen" : "skyblue")
+        .attr("fill", d => d.technology === "D3.js" ? "red" : "black")
 };
