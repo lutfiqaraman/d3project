@@ -3,5 +3,10 @@ Stylesheet of the project
  */
 
 .responsive-svg-container {
-    max-width: 600px;
+    max-width: 100%;
+}
+
+.barChartTable {
+    margin: 50px;
+    padding: 10px;
 }
