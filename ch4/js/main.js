@@ -1,4 +1,4 @@
-const csvFilePath = "../ch4/data/weekly_temperature.csv";
+const csvFilePath = "../ch4/data/weeklyTemperature.csv";
 
 d3
     .csv(csvFilePath, d => {
