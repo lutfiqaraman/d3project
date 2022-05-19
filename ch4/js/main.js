@@ -28,5 +28,23 @@ const drawLineChart = (data) => {
         .append("g")
         .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
+    const firstDate = d3.min(data, d => d.date);
+    const lastDate  = d3.max(data, d => d.date);
+
+    const xScale = d3.scaleTime()
+        .domain([firstDate, lastDate])
+        .range([0, innerWidth]);
+
+    const maxTemp = d3.max(data, d => d.max_temp_F);
+    const yScale = d3.scaleLinear()
+        .domain([0, maxTemp])
+        .range([innerHeight, 0]);
+
+    const bottomAxis = d3.axisBottom(xScale);
+    innerChart
+        .append("g")
+        .attr("class", "axis-x")
+        .call(bottomAxis);
+
 
 }
