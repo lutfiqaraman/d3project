@@ -40,10 +40,13 @@ const drawLineChart = (data) => {
         .domain([0, maxTemp])
         .range([innerHeight, 0]);
 
+    console.log(maxTemp);
+
     const bottomAxis = d3.axisBottom(xScale);
     innerChart
         .append("g")
         .attr("class", "axis-x")
+        .attr("transform", `translate(0, ${innerHeight})`)
         .call(bottomAxis);
 
 
