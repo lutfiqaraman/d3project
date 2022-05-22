@@ -29,6 +29,9 @@ const drawLineChart = (data) => {
         .append("g")
         .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
+    //====================
+    //====================
+
     const firstDate = d3.min(data, d => d.date);
     const lastDate  = d3.max(data, d => d.date);
 
@@ -45,6 +48,13 @@ const drawLineChart = (data) => {
     const bottomAxis = d3.axisBottom(xScale)
         .tickFormat(d3.timeFormat("%b"));
 
+    //X axis configuration
+    innerChart
+        .append("g")
+        .attr("class", "axis-x")
+        .attr("transform", `translate(0, ${innerHeight})`)
+        .call(bottomAxis);
+
     d3.selectAll(".axis-x text")
         .attr("x", d => {
             const currentMonth = d;
@@ -53,12 +63,7 @@ const drawLineChart = (data) => {
         })
         .attr("y", "10px");
 
-    innerChart
-        .append("g")
-        .attr("class", "axis-x")
-        .attr("transform", `translate(0, ${innerHeight})`)
-        .call(bottomAxis);
-
+    //Y axis configuration
     const leftAxis = d3.axisLeft(yScale);
 
     innerChart
