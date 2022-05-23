@@ -76,5 +76,5 @@ const drawLineChart = (data) => {
 
     d3.selectAll(".axis-x text, .axis-y text")
         .style("font-family", "Roboto, sans-serif")
-        .style("font-size", "14px");
+        .style("font-size", "12px");
 }
