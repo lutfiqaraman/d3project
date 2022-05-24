@@ -77,4 +77,31 @@ const drawLineChart = (data) => {
     d3.selectAll(".axis-x text, .axis-y text")
         .style("font-family", "Roboto, sans-serif")
         .style("font-size", "12px");
+
+    svg
+        .append("text")
+        .text("Temperature (°F)")
+        .attr("y", 20);
+
+    const blueSky = "#2d5d83";
+
+    innerChart
+        .selectAll("circle")
+        .data(data)
+        .join("circle")
+            .attr("r", 4)
+            .attr("cx", d => xScale(d.date))
+            .attr("cy", d => yScale(d.avg_temp_F))
+            .attr("fill", blueSky);
+
+    const lineGenerator = d3.line()
+        .x(d => xScale(d.date))
+        .y(d => yScale(d.avg_temp_F));
+
+    innerChart
+        .append("path")
+        .attr("d", lineGenerator(data))
+        .attr("fill", "none")
+        .attr("stroke", blueSky);
 }
+
