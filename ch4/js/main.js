@@ -115,5 +115,46 @@ const drawLineChart = (data) => {
         .attr("d", areaGenerator(data))
         .attr("fill", blueSky)
         .attr("fill-opacity", 0.2);
+
+    innerChart
+        .append("text")
+        .text("Average temperature")
+        .attr("x", xScale(lastDate) + 10)
+        .attr("y", yScale(data[data.length - 1].avg_temp_F))
+        .attr("dominant-baseline", "middle")
+        .attr("fill", blueSky);
+
+    innerChart
+        .append("text")
+        .text("Maximum temperature")
+        .attr("x", xScale(data[data.length - 4].date) + 13)
+        .attr("y", yScale(data[data.length - 4].max_temp_F) - 20)
+        .attr("fill", blueSky);
+
+    innerChart
+        .append("line")
+        .attr("x1", xScale(data[data.length - 4].date))
+        .attr("y1", yScale(data[data.length - 4].max_temp_F) - 3)
+        .attr("x2", xScale(data[data.length - 4].date) + 10)
+        .attr("y2", yScale(data[data.length - 4].max_temp_F) - 20)
+        .attr("stroke", blueSky)
+        .attr("stroke-width", 2);
+
+    innerChart
+        .append("text")
+        .text("Minimum temperature")
+        .attr("x", xScale(data[data.length - 3].date) + 13)
+        .attr("y", yScale(data[data.length - 3].min_temp_F) + 20)
+        .attr("alignment-baseline", "hanging")
+        .attr("fill", blueSky);
+
+    innerChart
+        .append("line")
+        .attr("x1", xScale(data[data.length - 3].date))
+        .attr("y1", yScale(data[data.length - 3].min_temp_F) + 3)
+        .attr("x2", xScale(data[data.length - 3].date) + 10)
+        .attr("y2", yScale(data[data.length - 3].min_temp_F) + 20)
+        .attr("stroke", blueSky)
+        .attr("stroke-width", 2);
 }
 
