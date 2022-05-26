@@ -1,7 +1,7 @@
-const csvFilePath = "../ch4/data/weeklyTemperature.csv";
+const csvFilePathWeeklyTemperatureData = "../ch4/data/weeklyTemperature.csv";
 
 d3
-    .csv(csvFilePath, d3.autoType)
+    .csv(csvFilePathWeeklyTemperatureData, d3.autoType)
     .then(data => {
         drawLineChart(data);
     });
